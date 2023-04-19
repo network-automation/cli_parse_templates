@@ -21,4 +21,4 @@
   result:
     "{{ name }}":
       hardware: "{{ hardware }}"
-      mac_address: "{{ mac }}
+      mac_address: "{{ mac }}"

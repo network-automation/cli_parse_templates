@@ -15,7 +15,7 @@
   result:
     "{{ neighbor }}":
       neighbor: "{{ neighbor }}"
-      version: "{{ verion }}"
+      version: "{{ version }}"
 
 - example: Ethernet1/1 is up
   getval: '(?P<name>\S+) is (?P<oper_state>\S+)'

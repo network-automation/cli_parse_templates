@@ -1,0 +1,19 @@
+---
+- name: run operational command and display to terminal
+  hosts: cisco
+  gather_facts: no
+  vars:
+    show_command: "show ip bgp summary"
+  tasks:
+
+    - name: Run command and parse with cli_parse
+      ansible.utils.cli_parse:
+        command: "{{ show_command }}"
+        parser:
+          name: ansible.netcommon.native
+        set_fact: interfaces_fact
+
+
+    - name: print out interfaces_fact var to terminal
+      ansible.builtin.debug:
+        msg: "{{ interfaces_fact }}"

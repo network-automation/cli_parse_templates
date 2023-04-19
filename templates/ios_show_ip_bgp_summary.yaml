@@ -13,8 +13,6 @@
 - example: "4"
   getval: '(?P<version>[0-9]+)'
   result:
-    "{{ neighbor }}":
-      neighbor: "{{ neighbor }}"
       version: "{{ version }}"
 
 - example: Ethernet1/1 is up

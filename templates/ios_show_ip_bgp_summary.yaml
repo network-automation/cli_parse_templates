@@ -8,7 +8,7 @@
   result:
     "{{ neighbor }}":
       neighbor: "{{ neighbor }}"
-  shared: True
+  shared: true
 
 - example: "4"
   getval: '(?P<version>[0-9]+)'

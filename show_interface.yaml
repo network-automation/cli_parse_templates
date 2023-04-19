@@ -14,5 +14,5 @@
 
 
     - name: print out interfaces_fact var to terminal
-      ansible.built.indebug:
+      ansible.builtin.debug:
         msg: "{{ interfaces_fact | to_nice_json }}"    

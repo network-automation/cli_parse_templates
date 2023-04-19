@@ -4,30 +4,10 @@
 # 192.168.4.1       4          100       0       0        1    0    0 never    Idle
 # 192.168.51.1       4          100       0       0        1    0    0 01:07:38 Idle
 - example: "192.168.110.1"
-  getval: '(?P<neighbor>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+  getval: '(?P<neighbor>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s{1,20}(?P<version>\d{1,1})'
   result:
     "{{ neighbor }}":
       neighbor: "{{ neighbor }}"
-  shared: true
-
-- example: "4"
-  getval: '(?P<version>[0-9]+)'
-  result:
       version: "{{ version }}"
-
-- example: Ethernet1/1 is up
-  getval: '(?P<name>\S+) is (?P<oper_state>\S+)'
-  result:
-    "{{ name }}":
-      name: "{{ name }}"
-      state:
-        operating: "{{ oper_state }}"
   shared: true
 
-- example: admin state is up, Dedicated Interface
-  getval: 'admin state is (?P<admin_state>\S+),'
-  result:
-    "{{ name }}":
-      name: "{{ name }}"
-      state:
-        admin: "{{ admin_state }}"
